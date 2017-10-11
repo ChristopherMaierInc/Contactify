@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @contact.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @contact.last_name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @contact.phone %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @contact.street_address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @contact.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @contact.state %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @contact.postcode %>
+</p>
+
+<p>
+  <strong>Full Address:</strong>
+  <%= @contact.monkey_address %>
+</p>
+
+<p>
+  <strong>Latitude, Longitude</strong>
+  <%= @contact.latitude %>, <%= @contact.longitude %>
+</p>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCq8b3vt5P9XaUUGoGnFjLhexddp0UnCAA
+    &q=<%= @contact.monkey_address %>" allowfullscreen>
+</iframe>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/streetview?key=AIzaSyCq8b3vt5P9XaUUGoGnFjLhexddp0UnCAA
+    &location=<%= @contact.latitude %>,<%= @contact.longitude %>
+    &heading=210
+    &pitch=10
+    &fov=35" allowfullscreen>
+</iframe>
+
+<br><br>
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>
